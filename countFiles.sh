@@ -7,9 +7,11 @@ DIRCOUNT=0
 
 if [ ! -d "$LOCATION" ]
     then
+	echo "Invalid Directory"
 	exit 1
 elif [ ! -r "$LOCATION" ]
     then
+	echo "Unreadable Directory"
 	exit 1
 fi
 
