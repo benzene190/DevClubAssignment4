@@ -2,7 +2,7 @@
 
 doc=$1
 
-if [ -r "$file" ]
+if [ ! -r "$doc" ]
 	then
 		echo "Unreadable Document"
 		exit -1
@@ -11,7 +11,7 @@ fi
 c=0
 count=0
 
-while read -r no fun || [[ -n "$line" ]];
+while read -r no fun;
 do 
 	if [ fun -eq "+" ]
 	    then
@@ -38,6 +38,6 @@ do
 fi
 
 
-done < $doc
+done < "$doc"
 
 echo "The total is $c"
